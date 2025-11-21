@@ -22,7 +22,7 @@ spec:
           image: aperissinotto/go-backend:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 8181
 
 ---
 apiVersion: v1
@@ -34,8 +34,8 @@ spec:
     app: go-backend
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 8181
+      targetPort: 8181
   type: ClusterIP
 
 ---
@@ -61,7 +61,7 @@ spec:
             - containerPort: 3000
           env:
             - name: VITE_API_URL
-              value: "http://10.43.22.100:8080"
+              value: "http://go-backend-service:8181"
 
 ---
 apiVersion: v1
@@ -73,6 +73,6 @@ spec:
   selector:
     app: frontend
   ports:
-    - port: 8181
+    - port: 3000
       targetPort: 3000
       protocol: TCP
