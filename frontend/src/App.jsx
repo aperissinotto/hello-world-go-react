@@ -4,10 +4,9 @@ function App() {
   const [msg, setMsg] = useState('')
 
   useEffect(() => {
-    fetch('http://go-backend-service:8181/api/hello')
+    fetch('/api/hello')
       .then(res => res.json())
       .then(data => setMsg(data.message))
-      .catch(err => console.error(err))
   }, [])
 
   return (
