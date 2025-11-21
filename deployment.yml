@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
         - name: go-backend
-          image: aperissinotto/go-backend:arm64
-          imagePullPolicy: IfNotPresent
+          image: aperissinotto/go-backend:19574439845
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 
@@ -55,8 +55,8 @@ spec:
     spec:
       containers:
         - name: react-frontend
-          image: aperissinotto/react-frontend:arm64
-          imagePullPolicy: IfNotPresent
+          image: aperissinotto/react-frontend:19574439845
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           env:
